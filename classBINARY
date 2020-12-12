@@ -1,0 +1,22 @@
+class search:
+    def binary_search(list1, n):  
+        low = 0  
+        high = len(list1) - 1  
+        mid = 0  
+        while low <= high:  
+            mid = (high + low) // 2  
+            if list1[mid] < n:  
+                low = mid + 1  
+            elif list1[mid] > n:  
+                high = mid - 1  
+            else:  
+                return mid  
+        return -1
+obj=search
+list1 = [16, 29, 39, 30, 95, 10, 45]
+a=int(input("Enter the number : "))
+result = obj.binary_search(list1, a)  
+if result != -1:  
+    print("Element is present at index", str(result))  
+else:  
+    print("Element is not present in list1") 
